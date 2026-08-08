@@ -46,10 +46,8 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[background,box-shadow,border-color] duration-300",
-          scrolled
-            ? "border-b border-ink/5 bg-cream/80 shadow-[0_8px_30px_-12px_rgba(18,22,26,0.15)] backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
+          "fixed inset-x-0 top-0 z-50 border-b border-cream/10 bg-asphalt/95 backdrop-blur-xl transition-shadow duration-300",
+          scrolled && "shadow-[0_12px_40px_-12px_rgba(0,0,0,0.6)]"
         )}
       >
         <nav
@@ -60,10 +58,10 @@ export default function Navbar() {
         >
           <Link href="/" className="group flex items-center gap-2.5">
             <Logo className="transition-transform duration-300 group-hover:-rotate-6" />
-            <span className="font-display text-lg font-extrabold tracking-tight">
-                Permis <span className="text-primary">Bénin</span>
+            <span className="font-display text-lg font-extrabold tracking-tight text-cream">
+              Permis <span className="text-signal">Bénin</span>
             </span>
-            </Link>
+          </Link>
 
           <div className="hidden items-center gap-7 md:flex">
             {LINKS.map((l) => (
@@ -72,7 +70,7 @@ export default function Navbar() {
                 href={l.href}
                 className={cn(
                   "relative py-2 text-sm font-semibold transition-colors",
-                  pathname === l.href ? "text-ink" : "text-ink/60 hover:text-ink"
+                  pathname === l.href ? "text-cream" : "text-cream/60 hover:text-cream"
                 )}
               >
                 {l.label}
@@ -90,7 +88,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/inscription"
-              className="group hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-cream transition-transform hover:scale-105 active:scale-95 md:inline-flex"
+              className="group hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-cream ring-1 ring-cream/15 transition-transform hover:scale-105 active:scale-95 md:inline-flex"
             >
               S'inscrire
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -99,7 +97,7 @@ export default function Navbar() {
             <button
               onClick={() => setOpen(!open)}
               aria-label="Menu"
-              className="grid size-10 place-items-center rounded-xl bg-asphalt text-cream md:hidden"
+              className="grid size-10 place-items-center rounded-xl bg-cream/10 text-cream md:hidden"
             >
               <Menu className="size-5" />
             </button>
@@ -107,7 +105,7 @@ export default function Navbar() {
         </nav>
       </motion.header>
 
-      {/* ---- Menu mobile plein écran (au-dessus de TOUT) ---- */}
+      {/* ---- Menu mobile plein écran ---- */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -116,14 +114,13 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] flex flex-col bg-asphalt md:hidden"
           >
-            {/* Barre du haut du menu */}
             <div className="flex h-20 shrink-0 items-center justify-between px-4">
               <Link href="/" className="flex items-center gap-2.5">
                 <Logo />
                 <span className="font-display text-lg font-extrabold text-cream">
-                    Permis <span className="text-signal">Bénin</span>
+                  Permis <span className="text-signal">Bénin</span>
                 </span>
-                </Link>
+              </Link>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Fermer le menu"
