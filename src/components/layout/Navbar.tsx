@@ -9,6 +9,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "motion/react";
+import Logo from "@/components/ui/Logo";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -58,18 +59,11 @@ export default function Navbar() {
           )}
         >
           <Link href="/" className="group flex items-center gap-2.5">
-            <span className="grid size-10 place-items-center overflow-hidden rounded-xl bg-asphalt">
-              <span className="flex flex-col gap-1 transition-transform duration-500 group-hover:-translate-y-1.5">
-                <span className="h-1.5 w-1 rounded-full bg-signal" />
-                <span className="h-1.5 w-1 rounded-full bg-signal" />
-                <span className="h-1.5 w-1 rounded-full bg-signal" />
-                <span className="h-1.5 w-1 rounded-full bg-signal" />
-              </span>
-            </span>
+            <Logo className="transition-transform duration-300 group-hover:-rotate-6" />
             <span className="font-display text-lg font-extrabold tracking-tight">
-              Permis <span className="text-primary">Bénin</span>
+                Permis <span className="text-primary">Bénin</span>
             </span>
-          </Link>
+            </Link>
 
           <div className="hidden items-center gap-7 md:flex">
             {LINKS.map((l) => (
@@ -125,17 +119,11 @@ export default function Navbar() {
             {/* Barre du haut du menu */}
             <div className="flex h-20 shrink-0 items-center justify-between px-4">
               <Link href="/" className="flex items-center gap-2.5">
-                <span className="grid size-10 place-items-center rounded-xl bg-cream/10">
-                  <span className="flex flex-col gap-1">
-                    <span className="h-1.5 w-1 rounded-full bg-signal" />
-                    <span className="h-1.5 w-1 rounded-full bg-signal" />
-                    <span className="h-1.5 w-1 rounded-full bg-signal" />
-                  </span>
-                </span>
+                <Logo />
                 <span className="font-display text-lg font-extrabold text-cream">
-                  Permis <span className="text-signal">Bénin</span>
+                    Permis <span className="text-signal">Bénin</span>
                 </span>
-              </Link>
+                </Link>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Fermer le menu"

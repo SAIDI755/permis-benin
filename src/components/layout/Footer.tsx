@@ -1,14 +1,17 @@
+import Link from "next/link";
 import { Heart, MessageCircle, Phone } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 import { CENTRES } from "@/lib/data/centres";
 import { PHONES, WHATSAPP_URL } from "@/lib/data/contact";
 
 const NAV = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "Formules", href: "#formules" },
-  { label: "Centres", href: "#centres" },
-  { label: "Partenaires", href: "#partenaires" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Inscription", href: "#inscription" },
+  { label: "Accueil", href: "/" },
+  { label: "À propos", href: "/a-propos" },
+  { label: "Formations", href: "/formations" },
+  { label: "Centres", href: "/centres" },
+  { label: "Partenaires", href: "/partenaires" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
@@ -21,13 +24,7 @@ export default function Footer() {
         {/* Marque */}
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="grid size-10 place-items-center rounded-xl bg-cream/10">
-              <span className="flex flex-col gap-1">
-                <span className="h-1.5 w-1 rounded-full bg-signal" />
-                <span className="h-1.5 w-1 rounded-full bg-signal" />
-                <span className="h-1.5 w-1 rounded-full bg-signal" />
-              </span>
-            </span>
+            <Logo />
             <span className="font-display text-lg font-extrabold">
               Permis <span className="text-signal">Bénin</span>
             </span>
@@ -49,14 +46,22 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5">
             {NAV.map((l) => (
               <li key={l.href}>
-                <a
+                <Link
                   href={l.href}
                   className="text-sm font-semibold text-cream/70 transition-colors hover:text-signal"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/inscription"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-signal transition-colors hover:text-cream"
+              >
+                S'inscrire →
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -83,7 +88,7 @@ export default function Footer() {
             {PHONES.map((p) => (
               <li key={p}>
                 <a
-                  href={`tel:+229${p.replaceAll(" ", "").slice(1)}`}
+                  href={`tel:+229${p.replaceAll(" ", "")}`}
                   className="flex items-center gap-2 text-sm font-semibold text-cream/70 transition-colors hover:text-signal"
                 >
                   <Phone className="size-4 text-primary" /> {p}

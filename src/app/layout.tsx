@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import StickyCta from "@/components/layout/StickyCta";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
+import Loader from "@/components/ui/Loader";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -56,11 +57,12 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${archivo.variable} ${manrope.variable}`}>
       <body>
+        <Loader />
         <SmoothScroll />
         {children}
         <StickyCta />
         <WhatsAppFloat />
-      </body>
+</body>
     </html>
   );
 }
