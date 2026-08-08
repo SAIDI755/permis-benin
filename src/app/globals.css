@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Polices */
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-manrope);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Palette « Route » */
+  --color-cream: #faf7ef;
+  --color-cream-dark: #f0e9da;
+  --color-ink: #12161a;
+  --color-asphalt: #0e1114;
+  --color-asphalt-light: #1a2026;
+  --color-primary: #0c7a4b;
+  --color-primary-dark: #0a5f3b;
+  --color-signal: #ffc531;
+  --color-signal-dark: #e0a400;
+  --color-stop: #e23b2e;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Animation marquee (bandeau défilant) */
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shine: shine 4s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes shine {
+    0% { transform: translateX(-100%); }
+    60%, 100% { transform: translateX(100%); }
+  }
+
+  --animate-marquee-reverse: marquee-reverse 35s linear infinite;
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+    --animate-puff: puff 1.2s ease-out infinite;
+  --animate-road: road 0.5s linear infinite;
+  --animate-drive: drive 9s linear infinite;
+
+  @keyframes puff {
+    0% { transform: translate(0, 0) scale(0.4); opacity: 0.7; }
+    100% { transform: translate(-30px, -12px) scale(1.7); opacity: 0; }
+  }
+  @keyframes road {
+    from { background-position-x: 0; }
+    to { background-position-x: -48px; }
+  }
+  @keyframes drive {
+    from { transform: translateX(-25vw); }
+    to { transform: translateX(110vw); }
   }
 }
 
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-cream text-ink font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+::selection {
+  @apply bg-signal text-ink;
 }
