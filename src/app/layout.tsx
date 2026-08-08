@@ -19,7 +19,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://permisbenin.bj"), // ← ton domaine plus tard
+  metadataBase: new URL("https://permis-benin-six.vercel.app"), // ← ton domaine plus tard
   title: {
     default: "Permis Bénin — Passe ton permis, trace ta route",
     template: "%s | Permis Bénin",
