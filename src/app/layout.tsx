@@ -19,7 +19,8 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://permis-benin-six.vercel.app"), // ← ton domaine plus tard
+  icons: [{ rel: "icon", url: "/icon.svg?v=2", type: "image/svg+xml" }],
+  metadataBase: new URL("https://permis-benin-six.vercel.app"),
   title: {
     default: "Permis Bénin — Passe ton permis, trace ta route",
     template: "%s | Permis Bénin",
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Permis Bénin — Passe ton permis, trace ta route",
     description:
-      "Formations au permis dès 50 000 F tout inclus, dans 8+ villes au Bénin. 27e vague : inscriptions ouvertes !",
-    url: "https://permisbenin.bj",
+      "Formations au permis dès 50 000 F tout inclus, dans 8+ villes au Bénin. Inscriptions ouvertes !",
+    url: "https://permis-benin-six.vercel.app",
     siteName: "Permis Bénin",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Permis Bénin" }],
     locale: "fr_FR",
@@ -50,7 +51,6 @@ export const metadata: Metadata = {
       "Formations au permis dès 50 000 F tout inclus, dans 8+ villes au Bénin.",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
