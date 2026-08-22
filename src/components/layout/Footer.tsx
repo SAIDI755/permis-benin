@@ -34,7 +34,7 @@ export default function Footer() {
             accessible à tous les Béninois.
           </p>
           <p className="mt-3 text-xs font-bold uppercase tracking-widest text-cream/40">
-            Président : Habib Ahandessi
+            Président : Mr Le Z
           </p>
         </div>
 

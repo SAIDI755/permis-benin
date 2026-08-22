@@ -145,7 +145,7 @@ export default function APropos() {
                   centres est une victoire pour le Bénin.
                 </p>
                 <p className="mt-5 font-display text-lg font-extrabold">
-                  Habib Ahandessi
+                  Mr Le Z
                 </p>
                 <p className="text-sm text-cream/70">
                   Président — ONG La Voix des Étudiants
