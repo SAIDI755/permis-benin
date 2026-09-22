@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Permis Bénin
 
-## Getting Started
+Plateforme web pour auto-école : présentation, inscription et réservation de leçons de conduite au Bénin.
 
-First, run the development server:
+## Stack
+
+- **Frontend** : Next.js 14
+- **Backend** : Symfony 7 / API Platform
+- **Base de données** : MySQL / PostgreSQL
+
+## Fonctionnalités
+
+- Inscription et gestion de profil élève
+- Réservation de leçons de conduite
+- Consultation du planning des cours
+- Page de présentation de l'auto-école (offres, tarifs, contact)
+
+## Lancer le projet en local
+
+### Backend (Symfony)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd backend
+composer install
+cp .env.example .env
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+symfony server:start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontend (Next.js)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd frontend
+npm install
+cp .env.example .env.local
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Captures d'écran
 
-## Learn More
+<!-- Ajoute ici 2-3 screenshots : page d'accueil, réservation, dashboard -->
 
-To learn more about Next.js, take a look at the following resources:
+## Statut
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Projet personnel, en développement.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Auteur
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Zahirou SAIDI** — [github.com/SAIDI755](https://github.com/SAIDI755) · [linkedin.com/in/zahirou-saidi-1380b5315](https://linkedin.com/in/zahirou-saidi-1380b5315)
