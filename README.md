@@ -186,6 +186,21 @@ This project demonstrates practical experience with:
 * Responsive user interfaces
 * Modern web development tools
 
+* ### Homepage
+![Homepage](screenshots/homepage.png)
+
+### About
+![About](screenshots/about.png)
+
+### Services
+![Services](screenshots/services.png)
+
+### Features
+![Features](screenshots/4.png)
+
+### Contact
+![Contact](screenshots/5.png)
+
 ## Author
 
 **Zahirou SAIDI**
